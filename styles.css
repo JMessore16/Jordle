@@ -64,6 +64,7 @@ p {
 .key > svg {
     width: 1.75em;
     height: 1.7em;
+    pointer-events: none;
 }
 
 .key:hover, .key:focus {

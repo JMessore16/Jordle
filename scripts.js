@@ -46,7 +46,7 @@ function handleKeyPress(e){
     }
 
     if (e.key === "Backspace" || e.key === "Delete"){
-        deleteKey()
+        deleteKey(activeTiles)
         return
     }
 
@@ -67,7 +67,7 @@ function pressKey(key) {
 }
 
 function deleteKey(){
-    const activeTiles =getActiveTiles()
+    const activeTiles = getActiveTiles()
     const lastTile = activeTiles[activeTiles.length -1]
     if (lastTile == null) return
     lastTile.textContent = ""
@@ -108,13 +108,14 @@ function flipTile(tile, index, array, guess) {
         if (targetWord[index] === letter){
             tile.dataset.state = 'correct'
             key.classList.add("correct")
+
         } else if (targetWord.includes(letter)) {
             tile.dataset.state = "wrong-location"
             key.classList.add("wrong-location")
         } else {
             tile.dataset.state = "wrong"
             key.classList.add("wrong")
-        }
+        } 
 
         if (index === array.length -1) {
             tile.addEventListener("transitionend", () => {
