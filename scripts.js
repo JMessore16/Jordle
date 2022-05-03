@@ -46,7 +46,7 @@ function handleKeyPress(e){
     }
 
     if (e.key === "Backspace" || e.key === "Delete"){
-        deleteKey(activeTiles)
+        deleteKey()
         return
     }
 
@@ -190,6 +190,4 @@ const checkbox = document.getElementById('checkbox');
 
 checkbox.addEventListener('change', () => {
     document.body.classList.toggle('light')
-    document.h1.classList.toggle('light')
-    document.key.classList.toggle('light')
 })

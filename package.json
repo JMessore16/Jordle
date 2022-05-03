@@ -1,0 +1,25 @@
+{
+  "name": "jordle",
+  "version": "1.0.0",
+  "main": "index.html",
+  "scripts": {
+    "start": "npm run",
+    "copyfonts": "copyfiles -f node_modules/font-awesome/fonts/* dist/fonts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JMessore16/Jordle.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JMessore16/Jordle/issues"
+  },
+  "homepage": "https://github.com/JMessore16/Jordle#readme",
+  "devDependencies": {
+    "copyfiles": "^2.2.0"
+  },
+  "dependencies": {},
+  "description": ""
+}
