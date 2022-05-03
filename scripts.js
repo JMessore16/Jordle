@@ -186,3 +186,10 @@ function danceTiles(tiles){
 })
 }
 
+const checkbox = document.getElementById('checkbox');
+
+checkbox.addEventListener('change', () => {
+    document.body.classList.toggle('light')
+    document.h1.classList.toggle('light')
+    document.key.classList.toggle('light')
+})
