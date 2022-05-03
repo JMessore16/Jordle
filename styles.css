@@ -86,7 +86,6 @@ p {
     display: grid;
     justify-content: center;
     align-content: center;
-    flex-grow: 1;
     grid-template-columns: repeat(5, 4em);
     grid-template-rows: repeat(6, 4em);
     gap: .25em;
@@ -218,25 +217,3 @@ p {
     opacity: 0;
 }
 
-@media only screen 
-  and (min-device-width: 375px) 
-  and (max-device-width: 812px) 
-  and (-webkit-min-device-pixel-ratio: 3) { 
-
-}
-
-@media only screen 
-  and (min-device-width: 375px) 
-  and (max-device-width: 812px) 
-  and (-webkit-min-device-pixel-ratio: 3)
-  and (orientation: portrait) { 
-
-}
-
-@media only screen 
-  and (min-device-width: 375px) 
-  and (max-device-width: 812px) 
-  and (-webkit-min-device-pixel-ratio: 3)
-  and (orientation: landscape) { 
-
-}
