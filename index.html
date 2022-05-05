@@ -11,33 +11,22 @@
     <script src="/scripts.js" defer></script>
 </head>
 <body>
+  <a  id="stats" data-bs-toggle="modal" data-bs-target="#statsModal" role="button">
+    <i class="fa fa-bar-chart"></i> 
+</a>
     <h1>JORDLE</h1>
-    <span class="navbar-text ml-auto">
-        <a  data-bs-toggle="modal" data-bs-target="#exampleModal" role="button">
-            <i class="fa fa-sign-in"></i> 
-        </a>
-    </span>
+    
 
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="statsModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Sign Up/Sign In</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <form>
-              <label for="email">Email</label><br>
-              <input type="text" id="email">
-              <br>
-              <label for="pass">Password</label><br>
-              <input type="text" id="pass">
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Sign Up</button>
-        </div>
+        <span class="close" id="close-stats">&times;</span>
+        <h2>STATISTICS</h2>
+        
+        <h4>GAMES PLAYED:<span id="games-played"></span></h4>
+        <h4>TOTAL WINS: <span id="total-wins"></span></h4>
+        <h4>WIN PCT: <span id="win-pct"></span></h4>
+        <h4>CURRENT STREAK:<span id="current-streak"></span></h4>
       </div>
     </div>
   </div>

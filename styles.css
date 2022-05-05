@@ -1,4 +1,4 @@
-@import '~bootstrap/scss/bootstrap';
+@import '~bootstrap/css/bootstrap';
 @import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 
 
@@ -299,6 +299,9 @@ p {
     font-size: 19px;
 }
 
-.fa-sign-in {
+.fa-bar-chart {
     color: white;
+    display: flex;
+    justify-content: left;
+    align-items:inherit;
 }
