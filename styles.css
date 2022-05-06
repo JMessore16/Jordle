@@ -39,7 +39,7 @@ body.light .alert {
     color: white;
 }
 
-body.light .fa-sign-in {
+body.light .fa-bar-chart {
     color: black;
 }
 
@@ -303,5 +303,5 @@ p {
     color: white;
     display: flex;
     justify-content: left;
-    align-items:inherit;
+    
 }

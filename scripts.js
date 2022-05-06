@@ -204,8 +204,8 @@ function checkWinLose(guess, tiles) {
     stopInteraction()
     updateWordIndex()
     showResult()
-    resetGameState()
-    pressKey.stop;
+  
+    
     
 
     return
