@@ -20,6 +20,7 @@ let winPercentage = 0
 let gamesPlayed = 0
 
 startInteraction()
+loadLocalStorage()
 
 function startInteraction() {
     document.addEventListener("click", handleMouseClick)
@@ -29,6 +30,24 @@ function startInteraction() {
 function stopInteraction(){
     document.removeEventListener("click", handleMouseClick)
     document.removeEventListener("click", handleKeyPress)
+}
+
+function loadLocalStorage(){
+    const storedBoardState = window.localStorage.getItem('guessGrid')
+    if (storedBoardState) {
+        document.querySelector("[data-guess-grid]").innerHTML = storedBoardState;
+    }
+    const storedKeyboardState = window.localStorage.getItem('keyboardContainer')
+    if (storedKeyboardState) {
+        document.querySelector("[data-keyboard]").innerHTML = storedKeyboardState;
+    }
+
+}
+
+function resetGameState() {
+    window.localStorage.removeItem('keyboardContainer');
+    window.localStorage.removeItem('guessGrid');
+    
 }
 
 function handleMouseClick(e){
@@ -103,6 +122,16 @@ function submitGuess(){
     activeTiles.forEach((...params) => flipTile(...params, guess))
 }
 
+function preserveGameState() {
+    window.localStorage.setItem
+    const keyboardContainer = document.querySelector("[data-keyboard]") 
+    window.localStorage.setItem("keyboardContainer",(keyboardContainer).innerHTML)
+
+    const guessGrid = document.querySelector("[data-guess-grid]")
+    window.localStorage.setItem("guessGrid",(guessGrid).innerHTML)
+
+}
+
 function flipTile(tile, index, array, guess) {
     const letter = tile.dataset.letter
     const key = keyboard.querySelector(`[data-key="${letter}"i]`)
@@ -129,7 +158,9 @@ function flipTile(tile, index, array, guess) {
                 startInteraction()
                 checkWinLose(guess, array)
             }, { once: true })
-            
+        if (index === 4) {
+            preserveGameState()
+        }
         }
     }, { once: true })
 }
@@ -173,6 +204,10 @@ function checkWinLose(guess, tiles) {
     stopInteraction()
     updateWordIndex()
     showResult()
+    resetGameState()
+    pressKey.stop;
+    
+
     return
 }
  const remainingTiles = guessGrid.querySelectorAll(":not([data-letter])")
@@ -243,6 +278,8 @@ function updateStatsModal(){
     document.getElementById('win-pct').textContent = winPercentage;
     document.getElementById('games-played').textContent = gamesPlayed;
 }
+
+
 const close = document.getElementById('close-stats')
 close.addEventListener("click", function() {
     statsModal.style.display = "none";
